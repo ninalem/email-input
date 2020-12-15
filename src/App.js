@@ -41,7 +41,7 @@ const EmailInput = (props) => {
     }
 
     /**
-     * if an arrobase is present in emailInput and something is wrote after it, show until 3 providers starting with the same characters
+     * if an at is present in emailInput and something is wrote after it, show until 3 providers starting with the same characters
      * otherwise, return the 3 most popular providers
      */
     return includesAt?.length > 0
