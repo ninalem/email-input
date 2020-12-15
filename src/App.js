@@ -40,14 +40,17 @@ const EmailInput = (props) => {
       return;
     }
 
+    // implement the best providers
+    const bestProviders = providers
+      .filter((provider) => provider.startsWith(includesAt))
+      .slice(0, 3);
+
     /**
      * if an at is present in emailInput and something is wrote after it, show until 3 providers starting with the same characters
      * otherwise, return the 3 most popular providers
      */
-    return includesAt?.length > 0
-      ? providers
-          .filter((provider) => provider.startsWith(includesAt))
-          ?.slice(0, 3)
+    return includesAt?.length > 0 && bestProviders.length > 0
+      ? bestProviders
       : popularProviders;
   };
 
